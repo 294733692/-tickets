@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import TabMenu from "../../components/tabMenu";
 import TopBar from "./components/TopBar";
 import Slide from "./components/Slide";
 import MovieItem from "./components/MovieItem";
@@ -19,10 +19,20 @@ export default class Home extends Component {
           </div>
         </div>
         <ul className="home__content">
-          <li><MovieItem /></li>
-          <li><MovieItem /></li>
-          <li><MovieItem /></li>
+          <li>
+            <MovieItem />
+          </li>
+          <li>
+            <MovieItem />
+          </li>
+          <li>
+            <MovieItem />
+          </li>
+          <li>
+            <MovieItem />
+          </li>
         </ul>
+        <TabMenu current="movie" />
       </div>
     );
   }

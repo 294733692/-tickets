@@ -8,3 +8,15 @@ $border:#E4E2E2;
   display: flex;
   justify-content: space-between;
 }
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
