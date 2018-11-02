@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import TabMenu from "../../components/tabMenu";
+import RenderToBody from "../../components/renderToBody";
 import TopBar from "./components/TopBar";
 import Slide from "./components/Slide";
 import MovieItem from "./components/MovieItem";
+import CityLayer from "./components/cityLayer";
 import "./index.css";
 
 export default class Home extends Component {
@@ -33,6 +35,7 @@ export default class Home extends Component {
           </li>
         </ul>
         <TabMenu current="movie" />
+        <RenderToBody><CityLayer /></RenderToBody>
       </div>
     );
   }
