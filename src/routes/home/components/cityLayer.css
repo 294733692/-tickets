@@ -1,8 +1,8 @@
 .cityLayer {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   overflow: hidden;
   background-color: #fff; }
@@ -27,7 +27,10 @@
     width: 100%;
     top: 44px;
     bottom: 0;
-    background-color: #F5F5F5; }
+    background-color: #F5F5F5;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; }
   .cityLayer .cityBlock {
     padding: 10px 15px; }
     .cityLayer .cityBlock__label {
@@ -47,7 +50,7 @@
       color: #999;
       margin-bottom: 10px;
       text-align: center; }
-  .cityLayer .cityList__label, .cityLayer .cityList_item {
+  .cityLayer .cityList__label, .cityLayer .cityList__item {
     color: #333;
     font-size: 12px; }
   .cityLayer .cityList__label {
@@ -58,7 +61,6 @@
     border-bottom: 1px solid #E4E2E2; }
   .cityLayer .cityList__wrap {
     margin: 0;
-    padding: 0;
     padding: 0 15px;
     background-color: #fff; }
   .cityLayer .cityList__item {
@@ -71,11 +73,7 @@
     position: absolute;
     padding: 0 6px;
     top: 80px;
-    right: 0px;
-    width: 40px;
-    list-style: none; }
-    .cityLayer__index li {
-      list-style: none; }
+    right: 0; }
   .cityLayer .cityIndex__list {
     width: 40px;
     padding: 0;

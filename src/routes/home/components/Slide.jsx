@@ -12,47 +12,18 @@ const PosterSlide = ({ data }) => {
   };
   return (
     <Slider {...settings}>
-      {/* data.map() */}
-      <div>
-        <img
-          className="posterSlide__image"
-          src="/source/slide/slide1.jpeg"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          className="posterSlide__image"
-          src="/source/slide/slide2.jpeg"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          className="posterSlide__image"
-          src="/source/slide/slide3.jpeg"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          className="posterSlide__image"
-          src="/source/slide/slide4.jpeg"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          className="posterSlide__image"
-          src="/source/slide/slide5.jpeg"
-          alt=""
-        />
-      </div>
+      {
+        data.map((item, index) => (
+          <div key={index}>
+            <img className="posterSlide__image" src={item.image} alt="" />
+          </div>
+        ))
+      }
     </Slider>
   );
 };
 Slider.propTypes = {
-  data: PropTypes.string.isReuired
+  data: PropTypes.string.isRequired
 };
 
 export default PosterSlide;

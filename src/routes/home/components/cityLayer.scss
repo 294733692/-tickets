@@ -1,15 +1,15 @@
 @import "../../../util";
 
-.cityLayer{
+.cityLayer {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   overflow: hidden;
   background-color: #fff;
 
-  &__title{
+  &__title {
     position: absolute;
     top: 0;
     width: 100%;
@@ -29,23 +29,27 @@
     font-weight: normal;
   }
 
-  &__content{
+  &__content {
     position: absolute;
     width: 100%;
     top: 44px;
     bottom: 0;
     background-color: #F5F5F5;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .cityBlock{
+  .cityBlock {
     padding: 10px 15px;
+
     &__label {
       font-size: 12px;
       color: #9f9fa0;
       margin-bottom: 14px;
     }
 
-    &__wrap{
+    &__wrap {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -65,7 +69,7 @@
 
   .cityList {
     &__label,
-    &_item {
+    &__item {
       color: #333;
       font-size: 12px;
     }
@@ -80,7 +84,6 @@
 
     &__wrap {
       margin: 0;
-      padding: 0;
       padding: 0 15px;
       background-color: #fff;
     }
@@ -96,22 +99,15 @@
     }
   }
 
-  &__index{
+  &__index {
     position: absolute;
     padding: 0 6px;
     top: 80px;
-    right: 0px;
-    width: 40px;
-
-    list-style: none;
-
-    li {
-      list-style: none;
-    }
+    right: 0;
   }
 
-  .cityIndex{
-    &__list{
+  .cityIndex {
+    &__list {
       width: 40px;
       padding: 0;
       list-style: none;
@@ -122,7 +118,7 @@
       margin-bottom: 4px;
       text-align: center;
 
-      a{
+      a {
         text-decoration: none;
         font-size: 12px;
         color: #5fb5f9;

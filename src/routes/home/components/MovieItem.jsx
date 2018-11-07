@@ -1,20 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MovieItem.css';
 
-const MovieItem = () => {
+const MovieItem = ({ data }) => {
   return (
     <div className="movieItem">
       <div className="movieItem__poster">
-        <img src="/source/movie/asset1.jpeg" alt=""/>
+        <img src={ data.poster } alt=""/>
       </div>
       <div className="movieItem__detail">
-        <div className="movieItem__name">神秘巨星</div>
-        <div className="movieItem__score">观众评分<span>9.3</span></div>
-        <div className="movieItem__director">导演：张艺谋</div>
-        <div className="movieItem__actor">主演：周杰伦</div>
+        <div className="movieItem__name">{ data.name }</div>
+        <div className="movieItem__score">观众评分<span>{ data.score }</span></div>
+        <div className="movieItem__director">导演：{ data.director }</div>
+        { data.actor && <div className="movieItem__actor">主演：{ data.actor }</div> }
         <div className="movieItem__tag">
-          <span className="tTag tTag--blue">今日最热</span>
-          <span className="tTag tTag--red">今日最热</span>
+          {
+            data.tags.map((item, index) => {
+              if (index % 2) {
+                return <span  key={item} className="tTag tTag--blue">{ item }</span>;
+              }
+              return <span key={item} className="tTag tTag--red">{ item }</span>;
+            })
+          }
         </div>
       </div>
       <div className="movieItem__btn">
@@ -25,4 +32,7 @@ const MovieItem = () => {
   );
 };
 
+MovieItem.Proptypes = {
+  data: PropTypes.object.isRequired
+};
 export default MovieItem;
