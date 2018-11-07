@@ -22,3 +22,24 @@
   text-align: center;
   color: #fff;
   font-size: 12px; }
+
+.tOperator {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  line-height: 40px; }
+  .tOperator__icon {
+    width: 40px;
+    height: 40px; }
+  .tOperator__icon--setting {
+    background: transparent url("./icons/setting.svg") 0 50%/20px 20px no-repeat; }
+  .tOperator__icon--message {
+    background: transparent url("./icons/message.svg") 100% 50%/20px 20px no-repeat; }
+  .tOperator__icon--back {
+    background: transparent url("./icons/back.svg") 0 50%/20px 20px no-repeat; }
+  .tOperator__icon--blackBack {
+    background: transparent url("./icons/back-black.svg") 0 50%/20px 20px no-repeat; }
+  .tOperator__icon--share {
+    background: transparent url("./icons/share.svg") 100% 50%/20px 20px no-repeat; }
+  .tOperator__icon--blackShare {
+    background: transparent url("./icons/share-black.svg") 100% 50%/20px 20px no-repeat; }

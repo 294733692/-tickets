@@ -42,7 +42,7 @@ export default class Home extends Component {
 
   async getData() {
     const data = await request('/index');
-    const {city, poster, movie} = data
+    const {city, poster, movie} = data;
     this.setState({
       city,
       poster,

@@ -20,3 +20,9 @@ $border:#E4E2E2;
   flex-direction: column;
   justify-content: center;
 }
+
+@mixin line-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
