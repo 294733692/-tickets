@@ -17,7 +17,6 @@ class CityLayer extends Component {
       const data = await request('/city');
       const { hot, all } = data;
 
-      console.log(hot);
       this.setState({
         hot,
         all
