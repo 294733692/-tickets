@@ -1,6 +1,19 @@
+@import '../../util';
 .detail{
   &__top{
     background-color: #d4b267;
     padding: 0 20px;
+  }
+
+  &__content{
+    padding: 0 20px;
+  }
+
+  &__module{
+    padding: 20px 0;
+
+    &:nth-child( n + 2 ){
+      border-top: 1px solid $border;
+    }
   }
 }

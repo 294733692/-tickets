@@ -1,3 +1,11 @@
 .detail__top {
   background-color: #d4b267;
   padding: 0 20px; }
+
+.detail__content {
+  padding: 0 20px; }
+
+.detail__module {
+  padding: 20px 0; }
+  .detail__module:nth-child(n + 2) {
+    border-top: 1px solid #E4E2E2; }
