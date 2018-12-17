@@ -4,11 +4,14 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  margin-right: -20px; }
+  margin-right: -20px;
+  -webkit-overflow-scrolling: touch; }
   .mArtist__list li {
     padding-right: 6px; }
   .mArtist__list li:last-child {
     padding-right: 20px; }
+  .mArtist__list::-webkit-scrollbar {
+    display: none; }
 
 .mArtist .artistInfo {
   display: block;
@@ -17,7 +20,8 @@
   .mArtist .artistInfo__image {
     width: 80px;
     height: 140px;
-    background: #ccc; }
+    background: #ccc;
+    background-size: cover; }
   .mArtist .artistInfo__name {
     font-size: 14px;
     color: #000;

@@ -5,7 +5,7 @@ import TopBar from "./components/TopBar";
 import Slide from "./components/Slide";
 import MovieItem from "./components/MovieItem";
 import CityLayer from "./components/cityLayer";
-import request from '../../helpers/resquest';
+import request from '../../helpers/request';
 import "./index.css";
 
 export default class Home extends Component {

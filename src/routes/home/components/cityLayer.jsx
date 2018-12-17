@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import '../../../helpers/resquest';
+import '../../../helpers/request';
 import './cityLayer.css';
-import request from "../../../helpers/resquest";
+import request from "../../../helpers/request";
 
 class CityLayer extends Component {
 

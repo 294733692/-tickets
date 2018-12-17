@@ -9,89 +9,30 @@ import './Artist.css';
  * @constructor
  */
 
-const Artist = props => {
+const Artist = ({ data }) => {
   return (
     <div className="mArtist">
       <ul className="mArtist__list">
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
-        <li className="">
-          <a href="xxxx" className="artistInfo">
-            <div className="artistInfo__image" style={{ backgroundImage: "url(xxx.jpeg)" }} />
-            <div>
-              <dl className="artistInfo__name">张艺谋</dl>
-              <dd className="artistInfo__job">导演</dd>
-            </div>
-          </a>
-        </li>
+        {
+          data.map(item => (
+            <li className="" key={item.name}>
+              <a href="xxxx" className="artistInfo">
+                <div className="artistInfo__image" style={{backgroundImage: `url(${ item.image })`}}/>
+                <div>
+                  <dl className="artistInfo__name">{item.name}</dl>
+                  <dd className="artistInfo__job">{item.job}</dd>
+                </div>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   );
 };
 
 Artist.propTypes = {
-
+  data: PropTypes.array.isRequired,
 };
 
 export default Artist;
