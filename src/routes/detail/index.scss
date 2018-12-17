@@ -16,4 +16,10 @@
       border-top: 1px solid $border;
     }
   }
+
+  &__overview{
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+  }
 }

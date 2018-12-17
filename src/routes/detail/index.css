@@ -9,3 +9,8 @@
   padding: 20px 0; }
   .detail__module:nth-child(n + 2) {
     border-top: 1px solid #E4E2E2; }
+
+.detail__overview {
+  color: #333;
+  font-size: 14px;
+  line-height: 28px; }
