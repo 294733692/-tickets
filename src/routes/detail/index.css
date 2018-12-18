@@ -13,7 +13,7 @@
 .detail__moduleTitle {
   font-size: 16px;
   font-weight: bold;
-  margin: 0; }
+  margin: 0 0 16px; }
 
 .detail__overview {
   color: #333;

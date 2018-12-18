@@ -5,6 +5,7 @@ import BaseInfo from './components/BaseInfo';
 import ScoreSummary from './components/ScoreSummary';
 import CollapsibleText from '../../components/CollapsibleText';
 import Artist from './components/Artist';
+import Comment from './container/Comment';
 import './index.css';
 
 class Detail extends Component {
@@ -58,6 +59,10 @@ class Detail extends Component {
             <div className="detail__module">
               <h3 className="detail__moduleTitle">演职人员</h3>
               <Artist data={artist}/>
+            </div>
+            <div className="detail__module">
+              <h3 className="detail__moduleTitle">热门评论</h3>
+              <Comment />
             </div>
           </div>
         </div>
