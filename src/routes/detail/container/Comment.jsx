@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ScoreDistribute from '../components/ScoreDistribute';
 import TagList from '../components/TagList';
+import CommentList from '../components/CommentList';
 
 class Comment extends Component {
   render() {
@@ -10,6 +11,9 @@ class Comment extends Component {
         <ScoreDistribute />
         <div style={{ marginTop: 16}}>
           <TagList />
+        </div>
+        <div style={{ marginTop: 16}}>
+          <CommentList />
         </div>
       </div>
     );

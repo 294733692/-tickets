@@ -43,7 +43,7 @@ class CollapsibleText extends Component {
   render() {
     const { isCollapse } = this.state
     const cls = isCollapse ? 'collapsibleText--collapse' : ''
-    const maxHeight = isCollapse ? this.props.height: 'auto'
+    const maxHeight = isCollapse ? this.props.height: 'none'
 
     return (
       <div className={`collapsibleText ${cls}`} style={{ maxHeight: maxHeight }} onClick={this.toggleStatus}>

@@ -1,11 +1,11 @@
 .collapsibleText {
-  position: relative; }
+  position: relative;
+  line-height: 28px;
+  font-size: 14px; }
   .collapsibleText--collapse {
     overflow: hidden; }
   .collapsibleText__label {
     position: absolute;
-    line-height: 28px;
-    font-size: 14px;
     bottom: 0;
     right: 0;
     color: #6A9ADA;
