@@ -12,10 +12,6 @@ class CollapsibleText extends Component {
       isNeedCollapse: false
     };
 
-    this.defaultProps = {
-      height: 84
-    }
-
     this.toggleStatus = () => {
       if ( this.state.isNeedCollapse){
         this.setState((prevState) =>({
@@ -31,7 +27,6 @@ class CollapsibleText extends Component {
     const dom = ReactDOM.findDOMNode(this);
     const value = this.props.height
 
-    console.log(dom.clientHeight)
     if( dom.clientHeight > value ){
         this.setState({
           isCollapse: true,

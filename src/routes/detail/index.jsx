@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import request from '../../helpers/request';
 import BaseInfo from './components/BaseInfo';
 import ScoreSummary from './components/ScoreSummary';
@@ -70,6 +69,5 @@ class Detail extends Component {
   }
 }
 
-Detail.propTypes = {};
 
 export default Detail;

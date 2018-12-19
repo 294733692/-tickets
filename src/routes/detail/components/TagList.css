@@ -7,6 +7,7 @@
   height: 28px;
   padding: 0 14px;
   border-radius: 14px;
-  margin: 6px 6px 0 0; }
+  margin: 6px 6px 0 0;
+  cursor: pointer; }
   .tagList__item--active {
     border: 1px solid #ef819e; }

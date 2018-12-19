@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Star from '../../../components/Star';
 import './ScoreDistribute.css';
 
@@ -50,6 +49,5 @@ class ScoreDistribute extends Component {
   }
 }
 
-ScoreDistribute.propTypes = {};
 
 export default ScoreDistribute;
