@@ -3,7 +3,7 @@
   padding: 0 20px; }
 
 .detail__content {
-  padding: 0 20px; }
+  padding: 0 20px 50px; }
 
 .detail__module {
   padding: 20px 0; }
@@ -19,3 +19,14 @@
   color: #333;
   font-size: 14px;
   line-height: 28px; }
+
+.detail__buyBtn {
+  position: fixed;
+  height: 55px;
+  width: 100%;
+  line-height: 55px;
+  color: #fff;
+  text-align: center;
+  bottom: 0;
+  background: #ef819e;
+  text-decoration: none; }

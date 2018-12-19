@@ -4,7 +4,9 @@ import BaseInfo from './components/BaseInfo';
 import ScoreSummary from './components/ScoreSummary';
 import CollapsibleText from '../../components/CollapsibleText';
 import Artist from './components/Artist';
+import LineLink from '../../components/lineLink';
 import Comment from './container/Comment';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 class Detail extends Component {
@@ -63,7 +65,16 @@ class Detail extends Component {
               <h3 className="detail__moduleTitle">热门评论</h3>
               <Comment />
             </div>
+            <div className="detail__module">
+              <h3 className="detail__moduleTitle">影片资料</h3>
+              <div>
+                <LineLink href="xx" title="幕后花絮" />
+                <LineLink href="xx" title="台词精选" />
+                <LineLink href="xx" title="出品发行" />
+              </div>
+            </div>
           </div>
+          <Link to="/seat" className="detail__buyBtn">选座购票</Link>
         </div>
     );
   }
