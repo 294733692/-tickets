@@ -6,6 +6,7 @@ import CollapsibleText from '../../components/CollapsibleText';
 import Artist from './components/Artist';
 import LineLink from '../../components/lineLink';
 import Comment from './container/Comment';
+import ImageSlider from './container/ImageSlider';
 import { Link } from 'react-router-dom';
 import './index.css';
 
@@ -14,6 +15,7 @@ class Detail extends Component {
     super(props);
     this.state = {
       artist : [],
+      showImage: false
     }
 
     this.getArtist = async () => {
@@ -24,6 +26,12 @@ class Detail extends Component {
           artist: data
         });
       }
+    };
+
+    this.toggleImage = () => {
+      this.setState({
+        showImage: !this.state.showImage,
+      });
     };
   }
 
@@ -44,7 +52,7 @@ class Detail extends Component {
               <div className="tOperator__icon tOperator__icon--back"></div>
               <div className="tOperator__icon tOperator__icon--share"></div>
             </div>
-            <BaseInfo />
+            <BaseInfo onShowImage={this.toggleImage} />
           </div>
           <div className="detail__content">
             <div className="detail__module">
@@ -75,6 +83,7 @@ class Detail extends Component {
             </div>
           </div>
           <Link to="/seat" className="detail__buyBtn">选座购票</Link>
+          { this.state.showImage && <ImageSlider onClose={this.toggleImage} /> }
         </div>
     );
   }

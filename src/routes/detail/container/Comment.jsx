@@ -53,7 +53,6 @@ class Comment extends Component {
 
   render() {
     const { tags, comments, current } = this.state;
-    console.log(current)
     const fliterComments = comments.filter(comment => comment.tag === current);
     return (
       <div className='mComment'>
