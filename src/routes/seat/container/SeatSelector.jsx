@@ -28,7 +28,7 @@ class SeatSelector extends Component {
   constructor(props) {
     super(props);
 
-    this.drawSeat = () => {
+    this.drawAllSeat = () => {
       const seatData = data;
 
       for (let i = 0; i < seatData.length; i++) {
@@ -42,6 +42,45 @@ class SeatSelector extends Component {
           // 绘制空座样式
           this.ctx.drawImage(this.emptyImage, offsetLeft, offsetTop, DRAW_SEAT_WIDTH, DRAW_SEAT_HEIGHT);
         }
+      }
+    };
+    this.clickSeat = (e) => {
+      const offset = this.refs.canvas.getBoundingClientRect();
+      const clickX = e.pageX - offset.left;
+      const clickY = e.pageY - offset.top;
+      const xPox = Math.ceil(clickX / SEAT_WIDTH);
+      const yPox = Math.ceil(clickY / SEAT_HEIGHT);
+
+      const seat = data.find(seat => seat.xPos === xPox && seat.yPos === yPox);
+      //  如果座位已售、不能选
+      if (!seat || seat.isSold) {
+        return;
+      }
+
+      const seatIndex = this.props.selectSeat.findIndex(item => item.id === seat.id);
+
+      if (seatIndex > -1) {
+        // 如果选择、则取消、如果没选、则选择
+        this.props.onRemove(seat.id);
+      } else {
+        if (this.props.selectSeat.length >= 4) {
+          //  如果以选择4个座位、不能选择
+          alert("不能超过4个座位!");
+        } else {
+          this.props.onAdd(seat);
+        }
+      }
+
+
+    };
+    this.drawSelectSeat = () => {
+      const { selectSeat } = this.props;
+
+      for (let i = 0; i <selectSeat.length; i++) {
+        const { xPos, yPos} = selectSeat[i];
+        const offsetLeft = (xPos - 1) * DRAW_SEAT_WIDTH;
+        const offsetTop = (yPos - 1) * DRAW_SEAT_HEIGHT;
+        this.ctx.drawImage(this.selectImage, offsetLeft, offsetTop, DRAW_SEAT_WIDTH, DRAW_SEAT_HEIGHT);
       }
     };
   };
@@ -59,7 +98,7 @@ class SeatSelector extends Component {
         this.emptyImage = emptyImage;
         this.selectImage = selectImage;
         this.soldImage = soldImage;
-        this.drawSeat();
+        this.drawAllSeat();
       }
     };
 
@@ -72,13 +111,24 @@ class SeatSelector extends Component {
     soldImage.src = './source/seat-sold.png';
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    this.ctx.clearRect(0, 0, DRAW_CANVAS_WIDTH, DRAW_CANVAS_HEIGHT); // 清空画布
+    this.drawAllSeat();  // 初始座位
+    this.drawSelectSeat(); // 已选择座位
+  }
+
+
   render() {
     return (
-      <canvas style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }} ref="canvas" width={DRAW_CANVAS_WIDTH} height={DRAW_CANVAS_HEIGHT}/>
+      <canvas onClick={this.clickSeat} style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }} ref="canvas" width={DRAW_CANVAS_WIDTH} height={DRAW_CANVAS_HEIGHT}/>
     );
   }
 }
 
-SeatSelector.propTypes = {};
+SeatSelector.propTypes = {
+  selectSeat: PropTypes.array.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onAdd: PropTypes.func.isRequired,
+};
 
 export default SeatSelector;
