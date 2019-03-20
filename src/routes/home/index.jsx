@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link} from "react-router-dom";
 import TabMenu from "../../components/tabMenu";
 import RenderToBody from "../../components/renderToBody";
 import TopBar from "./components/TopBar";
@@ -65,7 +66,7 @@ export default class Home extends Component {
           </div>
         </div>
         <ul className="home__content">
-          { movie.map(item => <li key={ item.name}><MovieItem data={ item }/></li>) }
+          { movie.map(item => <li key={ item.name}><Link to="/detail"><MovieItem data={ item }/></Link></li>) }
         </ul>
         <TabMenu current="movie" />
         { cityLayerVisible && <RenderToBody><CityLayer onClose={this.hiddenCityLayer} onSelect={this.onChangeCity}/></RenderToBody> }

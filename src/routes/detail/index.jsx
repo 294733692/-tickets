@@ -49,7 +49,7 @@ class Detail extends Component {
         <div className="detail">
           <div className="detail__top">
             <div className="tOperator">
-              <div className="tOperator__icon tOperator__icon--back"></div>
+              <div className="tOperator__icon tOperator__icon--back" onClick={() => { window.history.back(); }}></div>
               <div className="tOperator__icon tOperator__icon--share"></div>
             </div>
             <BaseInfo onShowImage={this.toggleImage} />

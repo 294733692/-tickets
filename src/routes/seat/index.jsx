@@ -35,7 +35,7 @@ class Seat extends Component {
       <Provider store={store}>
         <div className="seat">
           <div className="tOperator">
-            <i className="tOperator__icon tOperator__icon--blackBack" />
+            <i className="tOperator__icon tOperator__icon--blackBack" onClick={() => { window.history.back(); }}/>
             万达影院
             <i className="tOperator__icon tOperator__icon--blackShare" />
           </div>
