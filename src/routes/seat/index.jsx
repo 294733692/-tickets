@@ -42,7 +42,7 @@ class Seat extends Component {
             <div className="seat__map"><SeatSelecter  selectSeat={selectSeat} onAdd={this.addSeat} onRemove={this.removeSeat}/></div>
           </div>
         </div>
-        <SeatSelected data={selectSeat}/>
+        <SeatSelected data={selectSeat} onRemove={this.removeSeat}/>
       </div>
     );
   }

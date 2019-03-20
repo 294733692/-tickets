@@ -77,15 +77,20 @@ class SeatSelector extends Component {
       const { selectSeat } = this.props;
 
       for (let i = 0; i <selectSeat.length; i++) {
-        const { xPos, yPos} = selectSeat[i];
+        const { xPos, yPos, rowIndex, colIndex} = selectSeat[i];
         const offsetLeft = (xPos - 1) * DRAW_SEAT_WIDTH;
         const offsetTop = (yPos - 1) * DRAW_SEAT_HEIGHT;
         this.ctx.drawImage(this.selectImage, offsetLeft, offsetTop, DRAW_SEAT_WIDTH, DRAW_SEAT_HEIGHT);
+        this.ctx.fillText(`${rowIndex}排`, offsetLeft + DRAW_SEAT_WIDTH / 2, offsetTop + DRAW_SEAT_HEIGHT / 2.5);
+        this.ctx.fillText(`${colIndex}座`, offsetLeft + DRAW_SEAT_WIDTH / 2, offsetTop + DRAW_SEAT_HEIGHT * 2 / 3);
       }
     };
   };
   componentDidMount() {
     this.ctx = this.refs.canvas.getContext('2d');
+    this.ctx.font = `${10 * ratio}px Arial`;
+    this.ctx.fillStyle = '#fff';
+    this.ctx.textAlign = 'center';
     //加载需要的图片资源
     const emptyImage = new Image();
     const selectImage = new Image();

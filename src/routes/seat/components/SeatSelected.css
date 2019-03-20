@@ -2,7 +2,8 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #E4E2E2; }
+  border-top: 1px solid #E4E2E2;
+  background: #ffffff; }
   .seatSelected__list {
     display: flex;
     list-style: none;
